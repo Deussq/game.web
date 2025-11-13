@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameWeb</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+        <header class="con">
+            <span class="logo">Logo</span>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li class="btn"><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+
+       <div class="con hero-contacts">
+        <h1>Lorem Ipsum is simply dummy text of the printing and.</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        <img src="image/Huge Global.png" alt="">
+       </div>
+
+<div class="feedback">
+<div class="con">
+  <form id="contactForm">
+  <div class="inline">
+    <div>
+      <label>First Name</label>
+      <input type="text" id="firstName">
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input type="text" id="lastName">
+    </div>
+  </div>
+
+  <label>Email Address</label>
+  <input class="one-line" type="text" id="emailField">
+
+  <label>Message</label>
+  <textarea class="one-line" id="message"></textarea>
+
+  <button type="button" onclick="checkForm()">Get in touch</button>
+</form>
+
+<p id="msg" style="color:red; margin-top:10px;"></p>
+
+<script>
+  function checkForm() {
+    let first = document.getElementById("firstName");
+    let last = document.getElementById("lastName");
+    let email = document.getElementById("emailField");
+    let message = document.getElementById("message");
+    let msg = document.getElementById("msg");
+
+    
+    first.style.borderColor = "";
+    last.style.borderColor = "";
+    email.style.borderColor = "";
+    message.style.borderColor = "";
+
+    if(first.value == "" || last.value == "" || email.value == "" || message.value == ""){
+      msg.style.color = "red";
+      msg.innerHTML = "Please fill in all the fields.";
+
+      if(first.value == "") first.style.borderColor = "red";
+      if(last.value == "") last.style.borderColor = "red";
+      if(email.value == "") email.style.borderColor = "red";
+      if(message.value == "") message.style.borderColor = "red";
+    }
+    else if(email.value.indexOf("@") == -1){
+      msg.style.color = "red";
+      msg.innerHTML = "The Email is missing the @ symbol.";
+      email.style.borderColor = "red";
+    }
+    else if(email.value.indexOf(".") == -1){
+      msg.style.color = "red";
+      msg.innerHTML = "The Email is missing the . symbol.";
+      email.style.borderColor = "red";
+    }
+    else if(message.value.length < 10){
+      msg.style.color = "red";
+      msg.innerHTML = "The message is too short (minimum 10 characters).";
+      message.style.borderColor = "red";
+    }
+    else{
+      msg.style.color = "green";
+      msg.innerHTML = "Sent.";
+    }
+  }
+</script>
+
+
+
+
+
+</div>
+</div>
+
+    <footer>
+        <div class="block con">
+            <div>
+                <span class="logo">
+                    logo
+                </span>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+            <div>
+                <h4>About us</h4>
+                <ul>
+                    <li>Zeux</li>
+                    <li>Portfolio</li>
+                    <li>Careers</li>
+                    <li>Contact us</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact us</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <p>+908 89097 890</p>
+            </div>
+        </div>
+        <hr>
+        <p>Copyright ® 2021 Lorem All rights Rcerved</p>
+    </footer>
+</body>
+</html>
